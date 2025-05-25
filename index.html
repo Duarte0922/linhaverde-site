@@ -31,7 +31,7 @@ background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.
 }
 </style>
 </head>
-<body class="bg-gray-50">
+https://duarte0922.github.io/wracessoria-lib/<body class="bg-gray-50">
 <!-- Header -->
 <header class="bg-primary text-white shadow-md">
 <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -571,51 +571,85 @@ background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.
 <div class="p-8">
 <form>
 <div class="mb-4">
-<label for="name" class="block text-gray-700 text-sm font-medium mb-2">Nome Completo*</label>
-<input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
-</div>
-<div class="mb-4">
-<label for="phone" class="block text-gray-700 text-sm font-medium mb-2">Telefone/WhatsApp*</label>
-<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
-</div>
-<div class="mb-4">
-<label for="email" class="block text-gray-700 text-sm font-medium mb-2">E-mail</label>
-<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
-</div>
-<div class="mb-4">
-<label for="product" class="block text-gray-700 text-sm font-medium mb-2">Produto de Interesse*</label>
-<div class="relative">
-<select id="product" class="w-full px-4 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary pr-8" required>
-<option value="">Selecione um produto</option>
-<option value="cortina-rolo">Cortina Rolô</option>
-<option value="cortina-romana">Cortina Romana</option>
-<option value="cortina-painel">Cortina Painel</option>
-<option value="persiana-horizontal">Persiana Horizontal</option>
-<option value="persiana-vertical">Persiana Vertical</option>
-<option value="persiana-aluminio">Persiana de Alumínio</option>
-<option value="outros">Outros</option>
-</select>
-<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-<i class="ri-arrow-down-s-line text-gray-500"></i>
-</div>
-</div>
-</div>
-<div class="mb-4">
-<label for="measures" class="block text-gray-700 text-sm font-medium mb-2">Medidas Aproximadas (Largura x Altura)</label>
-<input type="text" id="measures" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Ex: 2,00m x 1,80m">
-</div>
-<div class="mb-6">
-<label for="message" class="block text-gray-700 text-sm font-medium mb-2">Mensagem</label>
-<textarea id="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Descreva detalhes adicionais sobre seu projeto..."></textarea>
-</div>
-<button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 px-6 !rounded-button font-medium whitespace-nowrap">Enviar Solicitação</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</section>
+<form id="whatsappForm" class="p-6">
+  <div class="mb-4">
+    <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Nome Completo*</label>
+    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+  </div>
 
+  <div class="mb-4">
+    <label for="phone" class="block text-gray-700 text-sm font-medium mb-2">Telefone/WhatsApp*</label>
+    <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
+  </div>
+
+  <div class="mb-4">
+    <label for="email" class="block text-gray-700 text-sm font-medium mb-2">E-mail</label>
+    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+  </div>
+
+  <div class="mb-4">
+    <label for="product" class="block text-gray-700 text-sm font-medium mb-2">Produto de Interesse*</label>
+    <div class="relative">
+      <select id="product" class="w-full px-4 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary pr-8" required>
+        <option value="">Selecione um produto</option>
+        <option value="cortina-rolo">Cortina Rolô</option>
+        <option value="cortina-romana">Cortina Romana</option>
+        <option value="cortina-painel">Cortina Painel</option>
+        <option value="persiana-horizontal">Persiana Horizontal</option>
+        <option value="persiana-vertical">Persiana Vertical</option>
+        <option value="persiana-aluminio">Persiana de Alumínio</option>
+        <option value="outros">Outros</option>
+      </select>
+      <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+        <i class="ri-arrow-down-s-line text-gray-500"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-4">
+    <label for="measures" class="block text-gray-700 text-sm font-medium mb-2">Medidas Aproximadas (Largura x Altura)</label>
+    <input type="text" id="measures" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Ex: 2,00m x 1,80m">
+  </div>
+
+  <div class="mb-6">
+    <label for="message" class="block text-gray-700 text-sm font-medium mb-2">Mensagem</label>
+    <textarea id="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Descreva detalhes adicionais sobre seu projeto..."></textarea>
+  </div>
+
+  <!-- Botão modificado para chamar o WhatsApp -->
+  <button type="button" onclick="enviarParaWhatsApp()" class="w-full bg-primary hover:bg-primary/90 text-white py-3 px-6 !rounded-button font-medium transition">
+    Enviar pelo WhatsApp
+  </button>
+</form>
+<script>
+function enviarParaWhatsApp() {
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim().replace(/\D/g, '');
+  const email = document.getElementById("email").value.trim();
+  const product = document.getElementById("product").value;
+  const measures = document.getElementById("measures").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  // Número do WhatsApp da loja (com código do país)
+  const numeroWhatsApp = "553197361-5179"; // Substitua pelo número correto
+
+  // Monta a mensagem formatada
+  const texto =
+    `*NOVA SOLICITAÇÃO DE ORÇAMENTO*\n\n` +
+    `*Nome:* ${name || 'Não informado'}\n` +
+    `*Telefone:* ${phone || 'Não informado'}\n` +
+    `*E-mail:* ${email || 'Não informado'}\n` +
+    `*Produto:* ${product || 'Não informado'}\n` +
+    `*Medidas:* ${measures || 'Não informado'}\n` +
+    `*Mensagem:* ${message || 'Sem mensagem adicional'}`;
+
+  // Codifica a mensagem para funcionar na URL
+  const textoCodificado = encodeURIComponent(texto);
+
+  // Abre o WhatsApp com a mensagem pronta
+  window.open(`https://api.whatsapp.com/send?phone= ${numeroWhatsApp}&text=${textoCodificado}`, '_blank');
+}
+</script>
 </section>
 <!-- Footer -->
 <footer id="contato" class="bg-gray-800 text-white pt-12 pb-6">
