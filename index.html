@@ -3,7 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cortinas & Persianas - Linha Verde</title>
+<title>Cortinas & Persianas Linha Verde | Vespasiano, BH e Região Metropolitana</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Cortinas e Persianas Linha Verde em Vespasiano, Belo Horizonte e região metropolitana. Cortina Rolô, Romana, Painel, Persiana Horizontal, Vertical e Alumínio. Tela Mosquiteiro. Orçamento grátis pelo WhatsApp!">
+<meta name="keywords" content="cortinas, persianas, tela mosquiteiro, Vespasiano, Belo Horizonte, BH, região metropolitana, cortina rolô, persiana horizontal, persiana vertical, persiana alumínio, cortina romana">
+<meta name="author" content="Cortinas & Persianas Linha Verde">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (WhatsApp / redes sociais) -->
+<meta property="og:title" content="Cortinas & Persianas Linha Verde">
+<meta property="og:description" content="Soluções em cortinas, persianas e tela mosquiteiro em Vespasiano e BH. Orçamento grátis!">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://duarte0922.github.io/linhaverde-site/">
+
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#2B7B8C',secondary:'#64B5C8'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,77 +27,93 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
 <style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-font-family: 'Montserrat', sans-serif;
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
--webkit-appearance: none;
-margin: 0;
-}
-.hero-section {
-background-image: url('imagens/principal.jpg');
-background-size: cover;
-background-position: center;
-}
-.overlay {
-background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
-}
+  :where([class^="ri-"])::before { content: "\f3c2"; }
+  body { font-family: 'Montserrat', sans-serif; }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+
+  .hero-section {
+    background-image: url('imagens/principal.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    position: relative;
+  }
+  .hero-overlay {
+    background: linear-gradient(90deg, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.75) 55%, rgba(255,255,255,0) 100%);
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Depoimentos slider */
+  .depoimento-card { display: none; }
+  .depoimento-card.active { display: block; }
+
+  /* FAQ accordion */
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .faq-answer.open { max-height: 500px; }
+
+  /* Botão Instagram flutuante */
+  .btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  }
+
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+
+  /* Animação fade-in */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in { animation: fadeInUp 0.6s ease both; }
 </style>
 </head>
+<body>
 
-<!-- Header -->
-<header class="bg-primary text-white shadow-md">
-<div class="container mx-auto px-4 py-3 flex justify-between items-center">
-<div class="flex flex-col">
-<a href="#" class="text-2xl font-['Pacifico'] text-white">Cortinas & Persianas</a>
-<span class="text-sm text-white/90">Linha Verde</span>
-</div>
-<nav class="hidden md:flex space-x-6">
-<a href="#" class="hover:text-secondary font-medium">Início</a>
-<a href="#produtos" class="hover:text-secondary font-medium">Produtos</a>
-<a href="#galeria" class="hover:text-secondary font-medium">Galeria</a>
-<a href="#sobre" class="hover:text-secondary font-medium">Sobre Nós</a>
-<a href="#contato" class="hover:text-secondary font-medium">Contato</a>
-</nav>
-<div class="md:hidden w-8 h-8 flex items-center justify-center">
-<i class="ri-menu-line ri-lg text-white"></i>
-</div>
-</div>
+<!-- ==================== HEADER ==================== -->
+<header class="bg-primary text-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="flex flex-col">
+      <a href="#" class="text-2xl font-['Pacifico'] text-white">Cortinas & Persianas</a>
+      <span class="text-sm text-white/90">Linha Verde</span>
+    </div>
+    <nav id="main-nav" class="hidden md:flex space-x-6">
+      <a href="#" class="hover:text-secondary font-medium transition-colors">Início</a>
+      <a href="#produtos" class="hover:text-secondary font-medium transition-colors">Produtos</a>
+      <a href="#galeria" class="hover:text-secondary font-medium transition-colors">Galeria</a>
+      <a href="#depoimentos" class="hover:text-secondary font-medium transition-colors">Depoimentos</a>
+      <a href="#sobre" class="hover:text-secondary font-medium transition-colors">Sobre Nós</a>
+      <a href="#faq" class="hover:text-secondary font-medium transition-colors">FAQ</a>
+      <a href="#contato" class="hover:text-secondary font-medium transition-colors">Contato</a>
+    </nav>
+    <button id="menu-btn" class="md:hidden w-8 h-8 flex items-center justify-center">
+      <i class="ri-menu-line ri-lg text-white"></i>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-primary px-4 pb-4">
+    <a href="#" class="block py-2 font-medium border-b border-white/20">Início</a>
+    <a href="#produtos" class="block py-2 font-medium border-b border-white/20">Produtos</a>
+    <a href="#galeria" class="block py-2 font-medium border-b border-white/20">Galeria</a>
+    <a href="#depoimentos" class="block py-2 font-medium border-b border-white/20">Depoimentos</a>
+    <a href="#sobre" class="block py-2 font-medium border-b border-white/20">Sobre Nós</a>
+    <a href="#faq" class="block py-2 font-medium border-b border-white/20">FAQ</a>
+    <a href="#contato" class="block py-2 font-medium">Contato</a>
+  </div>
 </header>
-<!-- Hero Section -->
-<section class="hero-section relative">
-  <div class="overlay w-full h-full absolute top-0 left-0"></div>
 
-<!-- Container principal deve ter `relative` -->
-<section class="relative bg-cover bg-center py-20">
-
-  <!-- Outros conteúdos da hero aqui -->
-
-<!-- Container principal com flex e QR do Instagram à direita -->
-<div class="flex flex-col md:flex-row justify-between items-start">
-  <div class="max-w-xl">
-    <!-- Conteúdo textual principal aqui -->
-  </div>
-
-</section>
-
-    </a>
-  </div>
-</div>
-
-
-
+<!-- ==================== HERO ==================== -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
   <div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
-    <div class="max-w-xl">
-      <div class="flex flex-col">
-        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2">Cortinas & Persianas</h1>
-        <p class="text-xl text-primary/90 mb-4">Linha Verde</p>
-        <p class="text-4xl md:text-5xl font-bold text-primary mb-2">TELA MOSQUITEIRO</p>
-      </div>
-      <p class="text-lg text-gray-700 mb-8">Transforme sua casa com nossas cortinas e persianas de alta qualidade. Soluções personalizadas que combinam estilo, funcionalidade e durabilidade.</p>
+    <div class="max-w-xl fade-in">
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2">Cortinas & Persianas</h1>
+      <p class="text-xl text-primary/90 mb-2">Linha Verde</p>
+      <p class="text-3xl md:text-4xl font-bold text-primary mb-4">TELA MOSQUITEIRO</p>
+      <p class="text-lg text-gray-700 mb-6">Transforme sua casa com nossas cortinas e persianas de alta qualidade. Soluções personalizadas que combinam estilo, funcionalidade e durabilidade — atendendo <strong>Vespasiano, Belo Horizonte e toda a Região Metropolitana</strong>.</p>
       <div class="flex items-center mb-8">
         <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
           <i class="ri-phone-line text-primary ri-lg"></i>
@@ -91,716 +123,881 @@ background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.
           <p class="text-sm text-gray-600">Atendimento das 9h às 18h</p>
         </div>
       </div>
-
       <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#orcamento" class="bg-primary hover:bg-primary/90 text-white py-3 px-6 !rounded-button font-medium whitespace-nowrap inline-block text-center">Faça seu Orçamento</a>
-        <a href="#produtos" class="border-2 border-primary text-primary hover:bg-primary/10 py-3 px-6 !rounded-button font-medium whitespace-nowrap inline-block text-center">Ver Produtos</a>
+        <a href="#orcamento" class="bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-button font-medium text-center transition-colors">Faça seu Orçamento</a>
+        <a href="#produtos" class="border-2 border-primary text-primary hover:bg-primary/10 py-3 px-6 rounded-button font-medium text-center transition-colors">Ver Produtos</a>
       </div>
     </div>
   </div>
 </section>
-<!-- Products Section -->
+
+<!-- ==================== PRODUTOS ==================== -->
 <section id="produtos" class="py-16 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold text-gray-800 mb-2">Nossos Produtos</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Oferecemos uma ampla variedade de cortinas e persianas para atender todas as suas necessidades de decoração e funcionalidade.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Product 1 -->
-<div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:translate-y-[-5px]">
-<div class="h-64 overflow-hidden">
-<img src="imagens/cortina rolo.jpg"; alt="Cortina Rolô" class="w-full h-full object-cover object-top">
-</div>
-<div class="p-6">
-<h3 class="text-xl font-bold text-gray-800 mb-2">Cortina Rolô</h3>
-<p class="text-gray-600 mb-4">Prática e versátil, a cortina rolô é ideal para controlar a luminosidade com estilo e elegância.</p>
-<div class="mb-4">
-<span class="text-sm font-medium text-gray-700 block mb-1">Disponível em:</span>
-<div class="flex space-x-2">
-<span class="w-6 h-6 rounded-full bg-primary"></span>
-<span class="w-6 h-6 rounded-full bg-gray-300"></span>
-<span class="w-6 h-6 rounded-full bg-amber-700"></span>
-<span class="w-6 h-6 rounded-full bg-gray-800"></span>
-</div>
-</div>
-<a href="#" class="inline-block text-primary font-medium hover:underline">Ver Detalhes <i class="ri-arrow-right-line align-middle ml-1"></i></a>
-</div>
-</div>
-<!-- Product 2 -->
-<div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:translate-y-[-5px]">
-<div class="h-64 overflow-hidden">
-<img src="imagens/1.jpeg">
-</div>
-<div class="p-6">
-<h3 class="text-xl font-bold text-gray-800 mb-2">Cortina Romana</h3>
-<p class="text-gray-600 mb-4">Elegante e sofisticada, a cortina romana traz um toque clássico e refinado para qualquer ambiente.</p>
-<div class="mb-4">
-<span class="text-sm font-medium text-gray-700 block mb-1">Disponível em:</span>
-<div class="flex space-x-2">
-<span class="w-6 h-6 rounded-full bg-primary"></span>
-<span class="w-6 h-6 rounded-full bg-gray-300"></span>
-<span class="w-6 h-6 rounded-full bg-amber-700"></span>
-<span class="w-6 h-6 rounded-full bg-gray-800"></span>
-</div>
-</div>
-<a href="#" class="inline-block text-primary font-medium hover:underline">Ver Detalhes <i class="ri-arrow-right-line align-middle ml-1"></i></a>
-</div>
-</div>
-<!-- Product 3 -->
-<div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:translate-y-[-5px]">
-<div class="h-64 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=elegant%20white%20and%20beige%20panel%20curtains%20in%20modern%20office%2C%20luxury%20window%20treatment%2C%20clean%20background%2C%20high%20quality%20product%20photography%2C%20detailed%20fabric%20texture&width=600&height=400&seq=4&orientation=landscape" alt="Cortina Painel" class="w-full h-full object-cover object-top">
-</div>
-<div class="p-6">
-<h3 class="text-xl font-bold text-gray-800 mb-2">Cortina Painel</h3>
-<p class="text-gray-600 mb-4">Moderna e funcional, a cortina painel é perfeita para ambientes amplos e portas de correr.</p>
-<div class="mb-4">
-<span class="text-sm font-medium text-gray-700 block mb-1">Disponível em:</span>
-<div class="flex space-x-2">
-<span class="w-6 h-6 rounded-full bg-primary"></span>
-<span class="w-6 h-6 rounded-full bg-gray-300"></span>
-<span class="w-6 h-6 rounded-full bg-amber-700"></span>
-<span class="w-6 h-6 rounded-full bg-gray-800"></span>
-</div>
-</div>
-<a href="#" class="inline-block text-primary font-medium hover:underline">Ver Detalhes <i class="ri-arrow-right-line align-middle ml-1"></i></a>
-</div>
-</div>
-<!-- Product 4 - Persiana Horizontal -->
-<div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:translate-y-[-5px]">
-  <div class="h-64 overflow-hidden">
-    <img src="imagens/persiana 3-1.jpeg" alt="Persiana Horizontal" class="w-full h-full object-cover object-top">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-2">Persiana Horizontal</h3>
-    <p class="text-gray-600 mb-4">Clássica e versátil, a persiana horizontal oferece controle preciso de luminosidade e privacidade.</p>
-    <div class="mb-4">
-      <span class="text-sm font-medium text-gray-700 block mb-1">Disponível em:</span>
-      <div class="flex space-x-2">
-        <span class="w-6 h-6 rounded-full bg-primary"></span>
-        <span class="w-6 h-6 rounded-full bg-gray-300"></span>
-        <span class="w-6 h-6 rounded-full bg-amber-700"></span>
-        <span class="w-6 h-6 rounded-full bg-gray-800"></span>
-      </div>
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">Nossos Produtos</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Oferecemos uma ampla variedade de cortinas e persianas para atender todas as suas necessidades de decoração e funcionalidade.</p>
     </div>
-    <a href="#" class="inline-block text-primary font-medium hover:underline">Ver Detalhes <i class="ri-arrow-right-line align-middle ml-1"></i></a>
-  </div>
-</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-
-<!-- Product 5 - Persiana Vertical -->
-<div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:translate-y-[-5px]">
-  <div class="h-64 overflow-hidden">
-    <img src="imagens/persiana vertical 1.jpeg" alt="Persiana Vertical" class="w-full h-full object-cover object-top">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-2">Persiana Vertical</h3>
-    <p class="text-gray-600 mb-4">Ideal para janelas grandes e portas, a persiana vertical combina praticidade e estilo contemporâneo.</p>
-    <a href="#" class="inline-block text-primary font-medium hover:underline">Ver Detalhes <i class="ri-arrow-right-line align-middle ml-1"></i></a>
-  </div>
-</div>
-
-<!-- Product 6 - Persiana de Alumínio -->
-<div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:translate-y-[-5px]">
-  <div class="h-64 overflow-hidden">
-    <img src="imagens/persiana aluminio 4-1.jpeg" alt="Persiana de Alumínio" class="w-full h-full object-cover object-top">
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-2">Persiana de Alumínio</h3>
-    <p class="text-gray-600 mb-4">Resistente e durável, a persiana de alumínio é perfeita para ambientes que exigem praticidade e facilidade de limpeza.</p>
-    <div class="mb-4">
-      <span class="text-sm font-medium text-gray-700 block mb-1">Disponível em:</span>
-      <div class="flex space-x-2">
-        <span class="w-6 h-6 rounded-full bg-primary"></span>
-        <span class="w-6 h-6 rounded-full bg-gray-300"></span>
-        <span class="w-6 h-6 rounded-full bg-amber-700"></span>
-        <span class="w-6 h-6 rounded-full bg-gray-800"></span>
+      <!-- Produto 1 -->
+      <div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:-translate-y-1">
+        <div class="h-64 overflow-hidden bg-gray-100 flex items-center justify-center">
+          <img src="imagens/cortina rolo.jpg" alt="Cortina Rolô em Vespasiano BH" class="w-full h-full object-cover object-top">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Cortina Rolô</h3>
+          <p class="text-gray-600 mb-4">Prática e versátil, ideal para controlar a luminosidade com estilo e elegância.</p>
+          <div class="flex space-x-2 mb-4">
+            <span class="w-6 h-6 rounded-full bg-primary border-2 border-gray-200" title="Azul/Verde"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-300 border-2 border-gray-200" title="Cinza"></span>
+            <span class="w-6 h-6 rounded-full bg-amber-700 border-2 border-gray-200" title="Marrom"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-800 border-2 border-gray-200" title="Preto"></span>
+          </div>
+          <a href="#orcamento" class="inline-block text-primary font-medium hover:underline">Solicitar Orçamento <i class="ri-arrow-right-line align-middle ml-1"></i></a>
+        </div>
       </div>
+
+      <!-- Produto 2 -->
+      <div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:-translate-y-1">
+        <div class="h-64 overflow-hidden bg-gray-100">
+          <img src="imagens/1.jpeg" alt="Cortina Romana em Vespasiano BH" class="w-full h-full object-cover object-center">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Cortina Romana</h3>
+          <p class="text-gray-600 mb-4">Elegante e sofisticada, traz um toque clássico e refinado para qualquer ambiente.</p>
+          <div class="flex space-x-2 mb-4">
+            <span class="w-6 h-6 rounded-full bg-primary border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-300 border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-amber-700 border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-800 border-2 border-gray-200"></span>
+          </div>
+          <a href="#orcamento" class="inline-block text-primary font-medium hover:underline">Solicitar Orçamento <i class="ri-arrow-right-line align-middle ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- Produto 3 -->
+      <div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:-translate-y-1">
+        <div class="h-64 overflow-hidden bg-gray-100">
+          <img src="imagens/3.jpeg" alt="Cortina Painel em BH" class="w-full h-full object-cover object-center">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Cortina Painel</h3>
+          <p class="text-gray-600 mb-4">Moderna e funcional, perfeita para ambientes amplos e portas de correr.</p>
+          <div class="flex space-x-2 mb-4">
+            <span class="w-6 h-6 rounded-full bg-primary border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-300 border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-amber-700 border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-800 border-2 border-gray-200"></span>
+          </div>
+          <a href="#orcamento" class="inline-block text-primary font-medium hover:underline">Solicitar Orçamento <i class="ri-arrow-right-line align-middle ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- Produto 4 -->
+      <div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:-translate-y-1">
+        <div class="h-64 overflow-hidden bg-gray-100">
+          <img src="imagens/persiana 3-1.jpeg" alt="Persiana Horizontal em Vespasiano" class="w-full h-full object-cover object-top">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Persiana Horizontal</h3>
+          <p class="text-gray-600 mb-4">Clássica e versátil, oferece controle preciso de luminosidade e privacidade.</p>
+          <div class="flex space-x-2 mb-4">
+            <span class="w-6 h-6 rounded-full bg-primary border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-300 border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-amber-700 border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-800 border-2 border-gray-200"></span>
+          </div>
+          <a href="#orcamento" class="inline-block text-primary font-medium hover:underline">Solicitar Orçamento <i class="ri-arrow-right-line align-middle ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- Produto 5 -->
+      <div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:-translate-y-1">
+        <div class="h-64 overflow-hidden bg-gray-100">
+          <img src="imagens/persiana vertical 1.jpeg" alt="Persiana Vertical em BH" class="w-full h-full object-cover object-top">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Persiana Vertical</h3>
+          <p class="text-gray-600 mb-4">Ideal para janelas grandes e portas, combina praticidade e estilo contemporâneo.</p>
+          <div class="flex space-x-2 mb-4">
+            <span class="w-6 h-6 rounded-full bg-primary border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-300 border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-amber-700 border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-800 border-2 border-gray-200"></span>
+          </div>
+          <a href="#orcamento" class="inline-block text-primary font-medium hover:underline">Solicitar Orçamento <i class="ri-arrow-right-line align-middle ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- Produto 6 -->
+      <div class="bg-white rounded shadow-md overflow-hidden transition-transform hover:-translate-y-1">
+        <div class="h-64 overflow-hidden bg-gray-100">
+          <img src="imagens/persiana aluminio 4-1.jpeg" alt="Persiana de Alumínio em Vespasiano" class="w-full h-full object-cover object-top">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Persiana de Alumínio</h3>
+          <p class="text-gray-600 mb-4">Resistente e durável, perfeita para ambientes que exigem praticidade e facilidade de limpeza.</p>
+          <div class="flex space-x-2 mb-4">
+            <span class="w-6 h-6 rounded-full bg-primary border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-300 border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-amber-700 border-2 border-gray-200"></span>
+            <span class="w-6 h-6 rounded-full bg-gray-800 border-2 border-gray-200"></span>
+          </div>
+          <a href="#orcamento" class="inline-block text-primary font-medium hover:underline">Solicitar Orçamento <i class="ri-arrow-right-line align-middle ml-1"></i></a>
+        </div>
+      </div>
+
     </div>
-    <a href="#" class="inline-block text-primary font-medium hover:underline">Ver Detalhes <i class="ri-arrow-right-line align-middle ml-1"></i></a>
   </div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
-<!-- Technical Details Section -->
+
+<!-- ==================== ESPECIFICAÇÕES ==================== -->
 <section class="py-16 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold text-gray-800 mb-2">Especificações Técnicas</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Conheça os detalhes técnicos dos nossos produtos e escolha a melhor opção para o seu ambiente.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Materials -->
-<div class="bg-white p-6 rounded shadow-md">
-<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-<i class="ri-scissors-line ri-lg text-primary"></i>
-</div>
-<h3 class="text-xl font-bold text-gray-800 mb-3">Materiais Disponíveis</h3>
-<ul class="space-y-2 text-gray-600">
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Tecido Blackout</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Tecido Screen</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Tecido Translúcido</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>PVC</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Alumínio</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Madeira Natural</span>
-</li>
-</ul>
-</div>
-<!-- Measurements -->
-<div class="bg-white p-6 rounded shadow-md">
-<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-<i class="ri-ruler-line ri-lg text-primary"></i>
-</div>
-<h3 class="text-xl font-bold text-gray-800 mb-3">Medidas Padrão</h3>
-<ul class="space-y-2 text-gray-600">
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Largura: 0,80m a 3,00m</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Altura: 1,00m a 3,50m</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Medidas sob encomenda</span>
-</li>
-<li class="flex items-center">
-<i class="ri-information-line text-primary mr-2"></i>
-<span>Consulte-nos para medidas especiais</span>
-</li>
-</ul>
-</div>
-<!-- Colors -->
-<div class="bg-white p-6 rounded shadow-md">
-<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-<i class="ri-palette-line ri-lg text-primary"></i>
-</div>
-<h3 class="text-xl font-bold text-gray-800 mb-3">Cores Disponíveis</h3>
-<div class="grid grid-cols-4 gap-2 mb-3">
-<span class="w-full h-8 rounded bg-primary"></span>
-<span class="w-full h-8 rounded bg-secondary"></span>
-<span class="w-full h-8 rounded bg-gray-300"></span>
-<span class="w-full h-8 rounded bg-gray-800"></span>
-<span class="w-full h-8 rounded bg-amber-700"></span>
-<span class="w-full h-8 rounded bg-blue-500"></span>
-<span class="w-full h-8 rounded bg-red-500"></span>
-<span class="w-full h-8 rounded bg-purple-500"></span>
-</div>
-<p class="text-gray-600 text-sm">Mais de 50 cores disponíveis em nosso catálogo completo.</p>
-</div>
-<!-- Operation Systems -->
-<div class="bg-white p-6 rounded shadow-md">
-<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
-<i class="ri-settings-line ri-lg text-primary"></i>
-</div>
-<h3 class="text-xl font-bold text-gray-800 mb-3">Sistemas de Acionamento</h3>
-<ul class="space-y-2 text-gray-600">
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Manual com Corrente</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Manual com Cordão</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Motorizado com Controle</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Motorizado com App</span>
-</li>
-<li class="flex items-center">
-<i class="ri-checkbox-circle-line text-primary mr-2"></i>
-<span>Compatível com Alexa/Google</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">Especificações Técnicas</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Conheça os detalhes técnicos dos nossos produtos e escolha a melhor opção para o seu ambiente.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-white p-6 rounded shadow-md">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-scissors-line ri-lg text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Materiais</h3>
+        <ul class="space-y-2 text-gray-600">
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Tecido Blackout</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Tecido Screen</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Tecido Translúcido</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>PVC</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Alumínio</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Madeira Natural</li>
+        </ul>
+      </div>
+      <div class="bg-white p-6 rounded shadow-md">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-ruler-line ri-lg text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Medidas</h3>
+        <ul class="space-y-2 text-gray-600">
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Largura: 0,80m a 3,00m</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Altura: 1,00m a 3,50m</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Medidas sob encomenda</li>
+          <li class="flex items-center"><i class="ri-information-line text-primary mr-2"></i>Consulte para medidas especiais</li>
+        </ul>
+      </div>
+      <div class="bg-white p-6 rounded shadow-md">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-palette-line ri-lg text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Cores</h3>
+        <div class="grid grid-cols-4 gap-2 mb-3">
+          <span class="w-full h-8 rounded bg-primary"></span>
+          <span class="w-full h-8 rounded bg-secondary"></span>
+          <span class="w-full h-8 rounded bg-gray-300"></span>
+          <span class="w-full h-8 rounded bg-gray-800"></span>
+          <span class="w-full h-8 rounded bg-amber-700"></span>
+          <span class="w-full h-8 rounded bg-blue-500"></span>
+          <span class="w-full h-8 rounded bg-red-500"></span>
+          <span class="w-full h-8 rounded bg-purple-500"></span>
+        </div>
+        <p class="text-gray-600 text-sm">Mais de 50 cores disponíveis no catálogo.</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow-md">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+          <i class="ri-settings-line ri-lg text-primary"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Acionamento</h3>
+        <ul class="space-y-2 text-gray-600">
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Manual com Corrente</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Manual com Cordão</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Motorizado com Controle</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Motorizado com App</li>
+          <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Compatível com Alexa/Google</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Gallery Section -->
+
+<!-- ==================== GALERIA ==================== -->
 <section id="galeria" class="py-16 bg-white">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-gray-800 mb-2">Galeria de Projetos</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">Confira alguns dos nossos projetos realizados e inspire-se para transformar seu ambiente.</p>
+      <p class="text-gray-600 max-w-2xl mx-auto">Confira alguns dos nossos projetos realizados em Vespasiano, BH e região e inspire-se para transformar seu ambiente.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      
-    <!-- Primeira imagem original -->
-    <div class="relative overflow-hidden rounded group">
-      <img src="imagens/7.jpeg" alt="Cortina Piso-Teto" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-        <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Cortina Piso-Teto</span>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/7.jpeg" alt="Cortina Piso-Teto Vespasiano" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Cortina Piso-Teto</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/1.jpeg" alt="Cortina Romana BH" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Cortina Romana</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/9.jpeg" alt="Cortina Sala BH" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Cortina Sala</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/10.jpeg" alt="Persiana Horizontal" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Persiana Horizontal</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/11.jpeg" alt="Persiana Escritório" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Persiana Escritório</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/3.jpeg" alt="Cortina Quarto BH" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Cortina Quarto</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/mosqueteiro 1.jpeg" alt="Tela Mosquiteiro Vespasiano" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Tela Mosquiteiro</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/mosqueteiro 2.jpeg" alt="Mosquiteiro Janela BH" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro Janela</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/mosqueteiro 3.jpeg" alt="Mosquiteiro Porta" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro Porta</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/Mosqueteiro 5.jpg" alt="Mosquiteiro Sacada" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro Sacada</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/Mosqueteiro 6.jpg" alt="Mosquiteiro Varanda" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro Varanda</span>
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded group">
+        <img src="imagens/mosqueteiro 7.jpg" alt="Mosquiteiro Quarto" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro Quarto</span>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Suas imagens locais -->
-    <div class="relative overflow-hidden rounded group">
-      <img src="imagens/1.jpeg" alt="Cortina 1" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-        <span class="text-white font-medium opacity-100 transition-opacity duration-300">Cortina 1</span>
+<!-- ==================== DEPOIMENTOS ==================== -->
+<section id="depoimentos" class="py-16 bg-primary/5">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">O que nossos clientes dizem</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Mais de 5.000 clientes satisfeitos em Vespasiano, BH e região metropolitana.</p>
+    </div>
+    <div class="max-w-3xl mx-auto relative">
+      <!-- Cards de depoimentos -->
+      <div id="dep-0" class="depoimento-card active bg-white rounded-lg shadow-md p-8 text-center">
+        <div class="flex justify-center mb-4">
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+        </div>
+        <p class="text-gray-700 text-lg mb-6 italic">"Adorei o atendimento! As persianas ficaram perfeitas na minha sala. O pessoal é muito atencioso e a instalação foi rápida. Super recomendo!"</p>
+        <div class="flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+            <i class="ri-user-3-line text-primary ri-lg"></i>
+          </div>
+          <div class="text-left">
+            <p class="font-bold text-gray-800">Ana Paula S.</p>
+            <p class="text-sm text-gray-500">Vespasiano - MG</p>
+          </div>
+        </div>
+      </div>
+      <div id="dep-1" class="depoimento-card bg-white rounded-lg shadow-md p-8 text-center">
+        <div class="flex justify-center mb-4">
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+        </div>
+        <p class="text-gray-700 text-lg mb-6 italic">"Comprei cortinas rolô e tela mosquiteiro. Qualidade excelente e preço justo. Já indiquei para toda minha família em BH. Resultado ficou incrível!"</p>
+        <div class="flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+            <i class="ri-user-3-line text-primary ri-lg"></i>
+          </div>
+          <div class="text-left">
+            <p class="font-bold text-gray-800">Carlos Eduardo M.</p>
+            <p class="text-sm text-gray-500">Belo Horizonte - MG</p>
+          </div>
+        </div>
+      </div>
+      <div id="dep-2" class="depoimento-card bg-white rounded-lg shadow-md p-8 text-center">
+        <div class="flex justify-center mb-4">
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-half-fill text-yellow-400 text-2xl"></i>
+        </div>
+        <p class="text-gray-700 text-lg mb-6 italic">"Atendimento pelo WhatsApp foi super rápido. O técnico veio no dia combinado, mediu tudo certinho e as cortinas romanas do meu quarto ficaram lindas!"</p>
+        <div class="flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+            <i class="ri-user-3-line text-primary ri-lg"></i>
+          </div>
+          <div class="text-left">
+            <p class="font-bold text-gray-800">Fernanda R.</p>
+            <p class="text-sm text-gray-500">Santa Luzia - MG</p>
+          </div>
+        </div>
+      </div>
+      <div id="dep-3" class="depoimento-card bg-white rounded-lg shadow-md p-8 text-center">
+        <div class="flex justify-center mb-4">
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+          <i class="ri-star-fill text-yellow-400 text-2xl"></i>
+        </div>
+        <p class="text-gray-700 text-lg mb-6 italic">"Instalei persianas de alumínio no meu escritório. Durabilidade e praticidade incríveis. O custo-benefício é excelente. Muito satisfeito com o resultado!"</p>
+        <div class="flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+            <i class="ri-user-3-line text-primary ri-lg"></i>
+          </div>
+          <div class="text-left">
+            <p class="font-bold text-gray-800">Roberto A.</p>
+            <p class="text-sm text-gray-500">Ribeirão das Neves - MG</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles -->
+      <div class="flex justify-center items-center mt-6 gap-4">
+        <button onclick="mudarDep(-1)" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/80 transition-colors">
+          <i class="ri-arrow-left-s-line ri-lg"></i>
+        </button>
+        <div class="flex gap-2" id="dep-dots">
+          <span class="w-3 h-3 rounded-full bg-primary cursor-pointer" onclick="irParaDep(0)"></span>
+          <span class="w-3 h-3 rounded-full bg-gray-300 cursor-pointer" onclick="irParaDep(1)"></span>
+          <span class="w-3 h-3 rounded-full bg-gray-300 cursor-pointer" onclick="irParaDep(2)"></span>
+          <span class="w-3 h-3 rounded-full bg-gray-300 cursor-pointer" onclick="irParaDep(3)"></span>
+        </div>
+        <button onclick="mudarDep(1)" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/80 transition-colors">
+          <i class="ri-arrow-right-s-line ri-lg"></i>
+        </button>
       </div>
     </div>
+  </div>
+</section>
 
-
-    <div class="relative overflow-hidden rounded group">
-      <img src="imagens/9.jpeg" alt="Cortina 2" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-        <span class="text-white font-medium opacity-100 transition-opacity duration-300">Cortina 2</span>
+<!-- ==================== SOBRE ==================== -->
+<section id="sobre" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Sobre a Linha Verde</h2>
+        <p class="text-gray-600 mb-4">Há mais de 2 anos no mercado, a Linha Verde se dedica a oferecer soluções em cortinas e persianas que combinam qualidade, estilo e funcionalidade.</p>
+        <p class="text-gray-600 mb-4">Atendemos <strong>Vespasiano, Belo Horizonte, Santa Luzia, Ribeirão das Neves, Lagoa Santa, Pedro Leopoldo</strong> e toda a Região Metropolitana de BH.</p>
+        <p class="text-gray-600 mb-6">Nossa equipe é formada por profissionais experientes e apaixonados por design de interiores, sempre prontos para ajudar você a encontrar a solução perfeita para seu ambiente.</p>
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div class="flex items-center">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+              <i class="ri-check-line ri-lg text-primary"></i>
+            </div>
+            <span class="text-gray-700 font-medium">Produtos de Qualidade</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+              <i class="ri-check-line ri-lg text-primary"></i>
+            </div>
+            <span class="text-gray-700 font-medium">Instalação Profissional</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+              <i class="ri-check-line ri-lg text-primary"></i>
+            </div>
+            <span class="text-gray-700 font-medium">Garantia Estendida</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+              <i class="ri-check-line ri-lg text-primary"></i>
+            </div>
+            <span class="text-gray-700 font-medium">Atendimento Personalizado</span>
+          </div>
+        </div>
+        <a href="#contato" class="bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-button font-medium inline-block transition-colors">Entre em Contato</a>
+      </div>
+      <div class="relative">
+        <img src="imagens/sobre.jpg" alt="Equipe Cortinas Linha Verde Vespasiano" class="w-full h-auto rounded shadow-lg">
+        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded shadow-md">
+          <p class="text-gray-800 font-bold">+ 2 anos</p>
+          <p class="text-gray-600 text-sm">de experiência</p>
+        </div>
+        <div class="absolute -top-6 -right-6 bg-white p-4 rounded shadow-md">
+          <p class="text-gray-800 font-bold">+ 5.000</p>
+          <p class="text-gray-600 text-sm">clientes satisfeitos</p>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="relative overflow-hidden rounded group">
-      <img src="imagens/10.jpeg" alt="Cortina 3" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-        <span class="text-white font-medium opacity-100 transition-opacity duration-300">Cortina 3</span>
+<!-- ==================== SEO - CIDADES ==================== -->
+<section class="py-12 bg-primary text-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-2xl font-bold mb-4">Atendemos toda a Região Metropolitana de BH</h2>
+    <p class="text-white/90 max-w-3xl mx-auto mb-6">Instalamos cortinas, persianas e telas mosquiteiro em Vespasiano, Belo Horizonte, Santa Luzia, Ribeirão das Neves, Lagoa Santa, Pedro Leopoldo, Contagem, Betim, Sabará e região.</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Vespasiano</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Belo Horizonte</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Santa Luzia</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Ribeirão das Neves</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Lagoa Santa</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Pedro Leopoldo</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Contagem</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Betim</span>
+      <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Sabará</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ORÇAMENTO ==================== -->
+<section id="orcamento" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="bg-primary p-8 text-white">
+          <h2 class="text-2xl font-bold mb-4">Solicite seu Orçamento</h2>
+          <p class="mb-6">Preencha o formulário e entraremos em contato pelo WhatsApp o mais rápido possível!</p>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full mr-3 mt-1 flex-shrink-0">
+                <i class="ri-phone-line text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-medium">Telefone / WhatsApp</h3>
+                <p>(31) 97361-5179</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full mr-3 mt-1 flex-shrink-0">
+                <i class="ri-instagram-line text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-medium">Instagram</h3>
+                <p>@cortinas_persianas_linha_verde</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full mr-3 mt-1 flex-shrink-0">
+                <i class="ri-mail-line text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-medium">E-mail</h3>
+                <p>contato@linhaverde.com.br</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full mr-3 mt-1 flex-shrink-0">
+                <i class="ri-time-line text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-medium">Horário de Atendimento</h3>
+                <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-8">
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Nome Completo*</label>
+            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+          </div>
+          <div class="mb-4">
+            <label for="phone" class="block text-gray-700 text-sm font-medium mb-2">Telefone/WhatsApp*</label>
+            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 text-sm font-medium mb-2">E-mail</label>
+            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+          </div>
+          <div class="mb-4">
+            <label for="product" class="block text-gray-700 text-sm font-medium mb-2">Produto de Interesse*</label>
+            <div class="relative">
+              <select id="product" class="w-full px-4 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary pr-8">
+                <option value="">Selecione um produto</option>
+                <option value="Cortina Rolô">Cortina Rolô</option>
+                <option value="Cortina Romana">Cortina Romana</option>
+                <option value="Cortina Painel">Cortina Painel</option>
+                <option value="Persiana Horizontal">Persiana Horizontal</option>
+                <option value="Persiana Vertical">Persiana Vertical</option>
+                <option value="Persiana de Alumínio">Persiana de Alumínio</option>
+                <option value="Tela Mosquiteiro">Tela Mosquiteiro</option>
+                <option value="Outros">Outros</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                <i class="ri-arrow-down-s-line text-gray-500"></i>
+              </div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <label for="measures" class="block text-gray-700 text-sm font-medium mb-2">Medidas Aproximadas (Largura x Altura)</label>
+            <input type="text" id="measures" placeholder="Ex: 2,00m x 1,80m" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block text-gray-700 text-sm font-medium mb-2">Mensagem</label>
+            <textarea id="message" rows="3" placeholder="Descreva detalhes adicionais..." class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"></textarea>
+          </div>
+          <button type="button" onclick="enviarParaWhatsApp()" class="w-full bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-button font-medium transition-colors flex items-center justify-center gap-2">
+            <i class="ri-whatsapp-line ri-lg"></i>
+            Enviar pelo WhatsApp
+          </button>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="relative overflow-hidden rounded group">
-      <img src="imagens/11.jpeg" alt="Cortina 4" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-        <span class="text-white font-medium opacity-100 transition-opacity duration-300">Cortina 4</span>
-      </div>
+<!-- ==================== FAQ ==================== -->
+<section id="faq" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">Perguntas Frequentes</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Tire suas dúvidas sobre nossos produtos e serviços.</p>
     </div>
-      
+    <div class="max-w-3xl mx-auto space-y-4">
 
-
-      <div class="relative overflow-hidden rounded group">
-        <img src="imagens/3.jpeg" alt="Cortina 5" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Cortina 5</span>
+      <div class="bg-white rounded shadow-md overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 font-semibold text-gray-800 flex justify-between items-center hover:bg-gray-50 transition-colors">
+          Vocês fazem medição e instalação?
+          <i class="ri-add-line ri-lg text-primary transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-gray-600">
+          <p class="pb-4">Sim! Oferecemos serviço completo: medição, fabricação sob medida e instalação profissional. Entre em contato pelo WhatsApp para agendar uma visita sem compromisso.</p>
         </div>
       </div>
 
-      <div class="relative overflow-hidden rounded group">
-        <img src="imagens/mosqueteiro 1.jpeg" alt="Mosquiteiro 1" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro 1</span>
+      <div class="bg-white rounded shadow-md overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 font-semibold text-gray-800 flex justify-between items-center hover:bg-gray-50 transition-colors">
+          Qual o prazo de entrega e instalação?
+          <i class="ri-add-line ri-lg text-primary transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-gray-600">
+          <p class="pb-4">O prazo médio é de 7 a 15 dias úteis após a confirmação do pedido, dependendo do produto e das medidas. Produtos em estoque podem ter prazo menor. Consulte-nos!</p>
         </div>
       </div>
 
-      <div class="relative overflow-hidden rounded group">
-        <img src="imagens/mosqueteiro 2.jpeg" alt="Mosquiteiro 2" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro 2</span>
+      <div class="bg-white rounded shadow-md overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 font-semibold text-gray-800 flex justify-between items-center hover:bg-gray-50 transition-colors">
+          Vocês atendem Belo Horizonte e região?
+          <i class="ri-add-line ri-lg text-primary transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-gray-600">
+          <p class="pb-4">Sim! Atendemos Vespasiano, Belo Horizonte, Santa Luzia, Ribeirão das Neves, Lagoa Santa, Pedro Leopoldo, Contagem, Betim, Sabará e toda a Região Metropolitana de BH.</p>
         </div>
       </div>
 
-      <div class="relative overflow-hidden rounded group">
-        <img src="imagens/mosqueteiro 3.jpeg" alt="Mosquiteiro 3" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro 3</span>
-        </div>
-      </div>
-     <div class="relative overflow-hidden rounded group">
-        <img src="imagens/Mosqueteiro 5.jpg" alt="Mosquiteiro 4" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro 4</span>
+      <div class="bg-white rounded shadow-md overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 font-semibold text-gray-800 flex justify-between items-center hover:bg-gray-50 transition-colors">
+          Como funciona o orçamento?
+          <i class="ri-add-line ri-lg text-primary transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-gray-600">
+          <p class="pb-4">O orçamento é totalmente gratuito! Você pode nos enviar as medidas pelo WhatsApp ou agendar uma visita técnica. Após a medição, enviamos a proposta detalhada.</p>
         </div>
       </div>
 
-      <div class="relative overflow-hidden rounded group">
-        <img src="imagens/Mosqueteiro 6.jpg" alt="Mosquiteiro 5" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro 5</span>
+      <div class="bg-white rounded shadow-md overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 font-semibold text-gray-800 flex justify-between items-center hover:bg-gray-50 transition-colors">
+          Qual a diferença entre Blackout e Screen?
+          <i class="ri-add-line ri-lg text-primary transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-gray-600">
+          <p class="pb-4">O Blackout bloqueia 100% da luz, ideal para quartos e home theater. O Screen filtra a luz solar, reduz o calor e mantém a visibilidade de dentro para fora — ótimo para salas e escritórios.</p>
         </div>
       </div>
 
-      <div class="relative overflow-hidden rounded group">
-        <img src="imagens/mosqueteiro 7.jpg" alt="Mosquiteiro 6" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-          <span class="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mosquiteiro 6</span>
+      <div class="bg-white rounded shadow-md overflow-hidden">
+        <button class="faq-btn w-full text-left px-6 py-4 font-semibold text-gray-800 flex justify-between items-center hover:bg-gray-50 transition-colors">
+          Quais formas de pagamento vocês aceitam?
+          <i class="ri-add-line ri-lg text-primary transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-gray-600">
+          <p class="pb-4">Aceitamos Pix, cartão de débito e crédito (parcelamos!), transferência bancária e dinheiro. Consulte as condições especiais de parcelamento.</p>
         </div>
       </div>
 
     </div>
   </div>
 </section>
-<!-- About Us Section -->
-<section id="sobre" class="py-16 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div>
-<h2 class="text-3xl font-bold text-gray-800 mb-4">Sobre a Linha Verde</h2>
-<p class="text-gray-600 mb-4">Há mais de 2 anos no mercado, a Linha Verde se dedica a oferecer soluções em cortinas e persianas que combinam qualidade, estilo e funcionalidade.</p>
-<p class="text-gray-600 mb-4">Nossa equipe é formada por profissionais experientes e apaixonados por design de interiores, sempre prontos para ajudar você a encontrar a solução perfeita para seu ambiente.</p>
-<p class="text-gray-600 mb-6">Trabalhamos com os melhores fornecedores e materiais do mercado, garantindo produtos duráveis e de alta qualidade que transformarão seus espaços.</p>
-<div class="grid grid-cols-2 gap-4 mb-6">
-<div class="flex items-center">
-<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
-<i class="ri-check-line ri-lg text-primary"></i>
-</div>
-<span class="text-gray-700 font-medium">Produtos de Qualidade</span>
-</div>
-<div class="flex items-center">
-<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
-<i class="ri-check-line ri-lg text-primary"></i>
-</div>
-<span class="text-gray-700 font-medium">Instalação Profissional</span>
-</div>
-<div class="flex items-center">
-<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
-<i class="ri-check-line ri-lg text-primary"></i>
-</div>
-<span class="text-gray-700 font-medium">Garantia Estendida</span>
-</div>
-<div class="flex items-center">
-<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
-<i class="ri-check-line ri-lg text-primary"></i>
-</div>
-<span class="text-gray-700 font-medium">Atendimento Personalizado</span>
-</div>
-</div>
-<a href="#contato" class="bg-primary hover:bg-primary/90 text-white py-3 px-6 !rounded-button font-medium whitespace-nowrap inline-block">Entre em Contato</a>
-</div>
-<div class="relative">
-<img src="imagens\sobre.jpg" alt="Nossa Equipe" class="w-full h-auto rounded shadow-lg">
-<div class="absolute -bottom-6 -left-6 bg-white p-4 rounded shadow-md">
-<p class="text-gray-800 font-bold">+ 2 anos</p>
-<p class="text-gray-600 text-sm">de experiência</p>
-</div>
-<div class="absolute -top-6 -right-6 bg-white p-4 rounded shadow-md">
-<p class="text-gray-800 font-bold">+ 5.000</p>
-<p class="text-gray-600 text-sm">clientes satisfeitos</p>
-</div>
-</div>
-</div>
-</div>
+
+<!-- ==================== MAPA / LOCALIZAÇÃO ==================== -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">Nossa Localização</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Rua dos Bicudos, 188 — Vespasiano, MG — CEP 33200-000</p>
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.7!2d-43.9127!3d-19.6918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVmVzcGFzaWFubywgTUc!5e0!3m2!1spt-BR!2sbr!4v1"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Localização Cortinas Linha Verde Vespasiano MG">
+      </iframe>
+    </div>
+    <div class="mt-6 text-center">
+      <a href="https://maps.google.com/?q=Rua+dos+Bicudos+188+Vespasiano+MG" target="_blank" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 transition-colors">
+        <i class="ri-map-pin-line"></i>
+        Abrir no Google Maps
+      </a>
+    </div>
+  </div>
 </section>
-<!-- Quote Form Section -->
-<section id="orcamento" class="py-16 bg-white">
-<div class="container mx-auto px-4">
-<div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-<div class="grid grid-cols-1 md:grid-cols-2">
-<div class="bg-primary p-8 text-white">
-<h2 class="text-2xl font-bold mb-4">Solicite seu Orçamento</h2>
-<p class="mb-6">Preencha o formulário ao lado e entraremos em contato o mais breve possível para atender sua solicitação.</p>
-<div class="space-y-4">
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full mr-3 mt-1 flex-shrink-0">
-<i class="ri-phone-line text-white"></i>
-</div>
-<div>
-<h3 class="font-medium">Telefone</h3>
-<p>(31) 97361-5179</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full mr-3 mt-1 flex-shrink-0">
-<i class="ri-whatsapp-line text-white"></i>
-</div>
-<div>
-<h3 class="font-medium">WhatsApp</h3>
-<p>(31) 97361-5179</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full mr-3 mt-1 flex-shrink-0">
-<i class="ri-mail-line text-white"></i>
-</div>
-<div>
-<h3 class="font-medium">E-mail</h3>
-<p>contato@linhaverde.com.br</p>
-</div>
-</div>
-   <div class="flex items-start">
-      <div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full mr-3 mt-1 flex-shrink-0">
-        <i class="ri-instagram-line text-white"></i>
+
+<!-- ==================== VÍDEOS ==================== -->
+<section style="background-color: #1A202C; padding: 40px 20px; text-align: center;">
+  <h2 style="color: white; font-size: 24px; margin-bottom: 30px;">Conheça mais pelas redes</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+    <a href="https://www.instagram.com/cortinas_persianas_linha_verde/" target="_blank" rel="noopener">
+      <video autoplay loop muted playsinline style="width: 300px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        <source src="videos/instagram video.mp4" type="video/mp4">
+      </video>
+    </a>
+    <a href="https://wa.me/5531973615179" target="_blank" rel="noopener">
+      <video autoplay loop muted playsinline style="width: 300px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        <source src="videos/zap2.mp4" type="video/mp4">
+      </video>
+    </a>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer id="contato" class="bg-gray-800 text-white pt-12 pb-6">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <div>
+        <h3 class="text-xl font-['Pacifico'] mb-1">Cortinas & Persianas</h3>
+        <span class="text-sm text-gray-300 block mb-3">Linha Verde</span>
+        <p class="text-gray-300 mb-4">Transformando ambientes com elegância e qualidade em Vespasiano e toda a RMBH.</p>
+        <div class="flex space-x-3">
+          <a href="https://www.instagram.com/cortinas_persianas_linha_verde/" target="_blank" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+            <i class="ri-instagram-fill text-white"></i>
+          </a>
+          <a href="https://wa.me/5531973615179" target="_blank" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+            <i class="ri-whatsapp-fill text-white"></i>
+          </a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
+            <i class="ri-facebook-fill text-white"></i>
+          </a>
+        </div>
       </div>
       <div>
-        <h3 class="font-medium">Instagram</h3>
-        <p>@cortinas_persianas_linha_verde</p>
-        <div class="flex items-start mb-4">
+        <h3 class="text-lg font-medium mb-4">Links Rápidos</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Início</a></li>
+          <li><a href="#produtos" class="text-gray-300 hover:text-white transition-colors">Produtos</a></li>
+          <li><a href="#galeria" class="text-gray-300 hover:text-white transition-colors">Galeria</a></li>
+          <li><a href="#depoimentos" class="text-gray-300 hover:text-white transition-colors">Depoimentos</a></li>
+          <li><a href="#sobre" class="text-gray-300 hover:text-white transition-colors">Sobre Nós</a></li>
+          <li><a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="#orcamento" class="text-gray-300 hover:text-white transition-colors">Orçamento</a></li>
+        </ul>
       </div>
+      <div>
+        <h3 class="text-lg font-medium mb-4">Contato</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <i class="ri-map-pin-line mr-3 mt-1 flex-shrink-0"></i>
+            <span>Rua dos Bicudos, 188<br>Vespasiano - MG, CEP 33200-000</span>
+          </li>
+          <li class="flex items-center">
+            <i class="ri-phone-line mr-3"></i>
+            <span>(31) 97361-5179</span>
+          </li>
+          <li class="flex items-center">
+            <i class="ri-whatsapp-line mr-3"></i>
+            <a href="https://wa.me/5531973615179" class="hover:text-secondary">(31) 97361-5179</a>
+          </li>
+          <li class="flex items-center">
+            <i class="ri-mail-line mr-3"></i>
+            <span>contato@linhaverde.com.br</span>
+          </li>
+        </ul>
       </div>
-    </div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full mr-3 mt-1 flex-shrink-0">
-<i class="ri-time-line text-white"></i>
-</div>
-<div>
-<h3 class="font-medium">Horário de Atendimento</h3>
-<p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
-</div>
-</div>
-</div>
-<div class="p-8">
-<form>
-<div class="mb-4">
-<form id="whatsappForm" class="p-6">
-  <div class="mb-4">
-    <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Nome Completo*</label>
-    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
-  </div>
-
-  <div class="mb-4">
-    <label for="phone" class="block text-gray-700 text-sm font-medium mb-2">Telefone/WhatsApp*</label>
-    <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" required>
-  </div>
-
-  <div class="mb-4">
-    <label for="email" class="block text-gray-700 text-sm font-medium mb-2">E-mail</label>
-    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
-  </div>
-
-  <div class="mb-4">
-    <label for="product" class="block text-gray-700 text-sm font-medium mb-2">Produto de Interesse*</label>
-    <div class="relative">
-      <select id="product" class="w-full px-4 py-2 border border-gray-300 rounded appearance-none focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary pr-8" required>
-        <option value="">Selecione um produto</option>
-        <option value="cortina-rolo">Cortina Rolô</option>
-        <option value="cortina-romana">Cortina Romana</option>
-        <option value="cortina-painel">Cortina Painel</option>
-        <option value="persiana-horizontal">Persiana Horizontal</option>
-        <option value="persiana-vertical">Persiana Vertical</option>
-        <option value="persiana-aluminio">Persiana de Alumínio</option>
-        <option value="outros">Outros</option>
-      </select>
-      <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-        <i class="ri-arrow-down-s-line text-gray-500"></i>
+      <div>
+        <h3 class="text-lg font-medium mb-4">Horário de Funcionamento</h3>
+        <ul class="space-y-2">
+          <li class="flex justify-between"><span class="text-gray-300">Segunda - Sexta:</span><span>9h às 18h</span></li>
+          <li class="flex justify-between"><span class="text-gray-300">Sábado:</span><span>9h às 13h</span></li>
+          <li class="flex justify-between"><span class="text-gray-300">Domingo:</span><span>Fechado</span></li>
+        </ul>
+        <div class="mt-4">
+          <h4 class="text-sm font-medium mb-2">Formas de Pagamento</h4>
+          <div class="flex space-x-3">
+            <i class="ri-visa-fill text-xl"></i>
+            <i class="ri-mastercard-fill text-xl"></i>
+            <i class="ri-bank-card-fill text-xl"></i>
+            <i class="ri-bank-fill text-xl"></i>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="border-t border-gray-700 pt-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">© 2025 Cortinas & Persianas Linha Verde. Todos os direitos reservados.</p>
+        <div class="mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 text-sm hover:text-white mr-4">Política de Privacidade</a>
+          <a href="#" class="text-gray-400 text-sm hover:text-white">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
   </div>
+</footer>
 
-  <div class="mb-4">
-    <label for="measures" class="block text-gray-700 text-sm font-medium mb-2">Medidas Aproximadas (Largura x Altura)</label>
-    <input type="text" id="measures" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Ex: 2,00m x 1,80m">
-  </div>
+<!-- ==================== BOTÕES FLUTUANTES ==================== -->
+<!-- WhatsApp -->
+<a href="https://wa.me/5531973615179" target="_blank" rel="noopener"
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg z-50 transition-transform hover:scale-110"
+   title="WhatsApp">
+  <i class="ri-whatsapp-line ri-xl"></i>
+</a>
 
-  <div class="mb-6">
-    <label for="message" class="block text-gray-700 text-sm font-medium mb-2">Mensagem</label>
-    <textarea id="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Descreva detalhes adicionais sobre seu projeto..."></textarea>
-  </div>
+<!-- Instagram -->
+<a href="https://www.instagram.com/cortinas_persianas_linha_verde/" target="_blank" rel="noopener"
+   class="fixed bottom-24 right-6 btn-instagram text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg z-50 transition-transform hover:scale-110"
+   title="Instagram">
+  <i class="ri-instagram-line ri-xl"></i>
+</a>
 
-  <!-- Botão modificado para chamar o WhatsApp -->
-  <button type="button" onclick="enviarParaWhatsApp()" class="w-full bg-primary hover:bg-primary/90 text-white py-3 px-6 !rounded-button font-medium transition">
-    Enviar pelo WhatsApp
-  </button>
-</form>
+<!-- ==================== SCRIPTS ==================== -->
 <script>
+// Mobile menu
+document.getElementById('menu-btn').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+// Fechar menu ao clicar em link
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.add('hidden');
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    const target = document.querySelector(targetId);
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
+    }
+  });
+});
+
+// WhatsApp form
 function enviarParaWhatsApp() {
   const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim().replace(/\D/g, '');
+  const phone = document.getElementById("phone").value.trim();
   const email = document.getElementById("email").value.trim();
   const product = document.getElementById("product").value;
   const measures = document.getElementById("measures").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // Número do WhatsApp da loja (com código do país)
-  const numeroWhatsApp = "553197361-5179"; // Substitua pelo número correto
+  if (!name || !phone || !product) {
+    alert("Por favor, preencha o Nome, Telefone e Produto de Interesse.");
+    return;
+  }
 
-  // Monta a mensagem formatada
+  const numero = "5531973615179";
   const texto =
     `*NOVA SOLICITAÇÃO DE ORÇAMENTO*\n\n` +
-    `*Nome:* ${name || 'Não informado'}\n` +
-    `*Telefone:* ${phone || 'Não informado'}\n` +
+    `*Nome:* ${name}\n` +
+    `*Telefone:* ${phone}\n` +
     `*E-mail:* ${email || 'Não informado'}\n` +
-    `*Produto:* ${product || 'Não informado'}\n` +
+    `*Produto:* ${product}\n` +
     `*Medidas:* ${measures || 'Não informado'}\n` +
     `*Mensagem:* ${message || 'Sem mensagem adicional'}`;
 
-  // Codifica a mensagem para funcionar na URL
-  const textoCodificado = encodeURIComponent(texto);
-
-  // Abre o WhatsApp com a mensagem pronta
-  window.open(`https://api.whatsapp.com/send?phone= ${numeroWhatsApp}&text=${textoCodificado}`, '_blank');
+  window.open(`https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(texto)}`, '_blank');
 }
-</script>
-</section>
 
-<!-- Vídeos Instagram e WhatsApp -->
-<section style="background-color: #1A202C; padding: 40px 20px; text-align: center;">
-  <h2 style="color: white; font-size: 24px; margin-bottom: 30px;">Conheça mais pelas redes</h2>
+// Depoimentos slider
+let depAtual = 0;
+const totalDeps = 4;
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/cortinas_persianas_linha_verde/" target="_blank">
-      <video autoplay loop muted playsinline style="width: 300px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-        <source src="videos/instagram video.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos.
-      </video>
-    </a>
-
-    <!-- WhatsApp -->
-    <a href="https://wa.me/553173615179" target="_blank">
-      <video autoplay loop muted playsinline style="width: 300px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-        <source src="videos/zap2.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos.
-      </video>
-    </a>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer id="contato" class="bg-gray-800 text-white pt-12 pb-6">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-<!-- Company Info -->
-<div>
-<div class="flex flex-col">
-<h3 class="text-xl font-['Pacifico'] mb-1">Cortinas & Persianas</h3>
-<span class="text-sm text-gray-300">Linha Verde</span>
-</div>
-<p class="text-gray-300 mb-4">Transformando ambientes com elegância e qualidade desde 2008.</p>
-<div class="flex space-x-4">
-<a href="#" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
-<i class="ri-facebook-fill text-white"></i>
-</a>
-<a href="#" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
-<i class="ri-instagram-fill text-white"></i>
-</a>
-<a href="#" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
-<i class="ri-pinterest-fill text-white"></i>
-</a>
-<a href="#" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary transition-colors">
-<i class="ri-youtube-fill text-white"></i>
-</a>
-</div>
-</div>
-<!-- Quick Links -->
-<div>
-<h3 class="text-lg font-medium mb-4">Links Rápidos</h3>
-<ul class="space-y-2">
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Início</a></li>
-<li><a href="#produtos" class="text-gray-300 hover:text-white transition-colors">Produtos</a></li>
-<li><a href="#galeria" class="text-gray-300 hover:text-white transition-colors">Galeria</a></li>
-<li><a href="#sobre" class="text-gray-300 hover:text-white transition-colors">Sobre Nós</a></li>
-<li><a href="#orcamento" class="text-gray-300 hover:text-white transition-colors">Orçamento</a></li>
-</ul>
-</div>
-<!-- Contact Info -->
-<div>
-<h3 class="text-lg font-medium mb-4">Contato</h3>
-<ul class="space-y-3">
-<li class="flex items-start">
-<i class="ri-map-pin-line mr-3 mt-1"></i>
-<span>Linha Verde <br>Rua dos Bicudos,188 Vespasiano - MG - CEP 33200-000 </span>
-</li>
-<li class="flex items-center">
-<i class="ri-phone-line mr-3"></i>
-<span>(31) 97361-5179</span>
-</li>
-<li class="flex items-center">
-<i class="ri-whatsapp-line mr-3"></i>
-<span>(31) 97361-5179</span>
-</li>
-<li class="flex items-center">
-<i class="ri-mail-line mr-3"></i>
-<span>contato@linhaverde.com.br</span>
-</li>
-</ul>
-</div>
-
-<!-- Business Hours -->
-<div>
-<h3 class="text-lg font-medium mb-4">Horário de Funcionamento</h3>
-<ul class="space-y-2">
-<li class="flex justify-between">
-<span class="text-gray-300">Segunda - Sexta:</span>
-<span>9h às 18h</span>
-</li>
-<li class="flex justify-between">
-<span class="text-gray-300">Sábado:</span>
-<span>9h às 13h</span>
-</li>
-<li class="flex justify-between">
-<span class="text-gray-300">Domingo:</span>
-<span>Fechado</span>
-</li>
-</ul>
-<div class="mt-4">
-<h4 class="text-sm font-medium mb-2">Formas de Pagamento</h4>
-<div class="flex space-x-3">
-<i class="ri-visa-fill text-xl"></i>
-<i class="ri-mastercard-fill text-xl"></i>
-<i class="ri-bank-card-fill text-xl"></i>
-<i class="ri-paypal-fill text-xl"></i>
-<i class="ri-bank-fill text-xl"></i>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="border-t border-gray-700 pt-6 mt-8">
-<div class="flex flex-col md:flex-row justify-between items-center">
-<p class="text-gray-400 text-sm">© 2025 Cortinas & Persianas. Todos os direitos reservados.</p>
-<div class="mt-4 md:mt-0">
-<a href="#" class="text-gray-400 text-sm hover:text-white mr-4">Política de Privacidade</a>
-<a href="#" class="text-gray-400 text-sm hover:text-white">Termos de Uso</a>
-</div>
-</div>
-</div>
-</div>
-</footer>
-<!-- WhatsApp Button -->
-<a href="https://wa.me/553173615179" class="fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg z-50 transition-transform hover:scale-110">
-<i class="ri-whatsapp-line ri-xl"></i>
-</a>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-// Mobile menu toggle
-const menuButton = document.querySelector('.md\\:hidden');
-const mobileMenu = document.querySelector('nav');
-if (menuButton && mobileMenu) {
-menuButton.addEventListener('click', function() {
-mobileMenu.classList.toggle('hidden');
-mobileMenu.classList.toggle('flex');
-mobileMenu.classList.toggle('flex-col');
-mobileMenu.classList.toggle('absolute');
-mobileMenu.classList.toggle('top-16');
-mobileMenu.classList.toggle('left-0');
-mobileMenu.classList.toggle('w-full');
-mobileMenu.classList.toggle('bg-primary');
-mobileMenu.classList.toggle('p-4');
-mobileMenu.classList.toggle('z-50');
-});
+function atualizarDeps() {
+  for (let i = 0; i < totalDeps; i++) {
+    document.getElementById(`dep-${i}`).classList.remove('active');
+  }
+  document.getElementById(`dep-${depAtual}`).classList.add('active');
+  const dots = document.querySelectorAll('#dep-dots span');
+  dots.forEach((d, i) => {
+    d.classList.toggle('bg-primary', i === depAtual);
+    d.classList.toggle('bg-gray-300', i !== depAtual);
+  });
 }
-});
-document.addEventListener('DOMContentLoaded', function() {
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-if (targetId === '#') return;
-const targetElement = document.querySelector(targetId);
-if (targetElement) {
-window.scrollTo({
-top: targetElement.offsetTop - 80,
-behavior: 'smooth'
-});
+
+function mudarDep(dir) {
+  depAtual = (depAtual + dir + totalDeps) % totalDeps;
+  atualizarDeps();
 }
-});
-});
+
+function irParaDep(idx) {
+  depAtual = idx;
+  atualizarDeps();
+}
+
+// Auto-rotacionar depoimentos
+setInterval(() => mudarDep(1), 5000);
+
+// FAQ accordion
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const answer = this.nextElementSibling;
+    const icon = this.querySelector('i');
+    const isOpen = answer.classList.contains('open');
+
+    // Fechar todos
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-btn i').forEach(i => {
+      i.classList.remove('ri-subtract-line');
+      i.classList.add('ri-add-line');
+    });
+
+    if (!isOpen) {
+      answer.classList.add('open');
+      icon.classList.remove('ri-add-line');
+      icon.classList.add('ri-subtract-line');
+    }
+  });
 });
 </script>
+
 </body>
 </html>
